@@ -1,7 +1,7 @@
 {
   "id": "copilot",
   "name": "GitHub Copilot Harness",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Adds the GitHub Copilot CLI as a Work harness, driven over ACP (`copilot --acp --stdio`).",
   "icon": "copilot.svg",
   "harnesses": [
@@ -38,6 +38,39 @@
               "resetsAt": "/quota_reset_date_utc"
             }
           ]
+        }
+      },
+      "accounts": {
+        "env": {
+          "COPILOT_HOME": "copilot",
+          "GH_CONFIG_DIR": "gh"
+        },
+        "clear": [
+          "COPILOT_GITHUB_TOKEN",
+          "GH_TOKEN",
+          "GITHUB_TOKEN"
+        ],
+        "login": [
+          {
+            "command": "copilot",
+            "args": [
+              "login"
+            ]
+          },
+          {
+            "command": "gh",
+            "args": [
+              "auth",
+              "login",
+              "--hostname",
+              "github.com",
+              "--web"
+            ]
+          }
+        ],
+        "signedIn": {
+          "file": "copilot/config.json",
+          "pointer": "/loggedInUsers/0"
         }
       }
     }
