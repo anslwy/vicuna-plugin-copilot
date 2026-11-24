@@ -1,0 +1,20 @@
+{
+  "id": "copilot",
+  "name": "GitHub Copilot Harness",
+  "version": "1.0.0",
+  "description": "Adds the GitHub Copilot CLI as a Work harness, driven over ACP (`copilot --acp --stdio`).",
+  "icon": "copilot.svg",
+  "harnesses": [
+    {
+      "id": "copilot",
+      "label": "Copilot",
+      "acp": {
+        "command": "copilot",
+        "args": ["--acp", "--stdio"]
+      },
+      "installHint": "Install the Copilot CLI (npm install -g @github/copilot), run `copilot login` once, then reopen Work.",
+      "installUrl": "https://docs.github.com/en/copilot/reference/acp-server",
+      "icon": "copilot.svg"
+    }
+  ]
+}
