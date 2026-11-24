@@ -29,3 +29,7 @@ See [docs.github.com/en/copilot/reference/acp-server](https://docs.github.com/en
 ## Icon
 
 `copilot.svg` uses the Copilot glyph from [Primer Octicons](https://github.com/primer/octicons) (MIT License, © GitHub Inc.). GitHub Copilot is a trademark of GitHub, Inc.
+
+## Usage
+
+The Usage view (and `usage_status`) reads your Copilot quota with `gh api /copilot_internal/user`, the same quota the CLI's `/usage` shows: AI credits and completions left, plus the reset date. It needs the GitHub CLI signed in (`gh auth login`). Vicuna asks you to approve that command along with the harness.

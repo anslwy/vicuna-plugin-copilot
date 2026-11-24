@@ -1,7 +1,7 @@
 {
   "id": "copilot",
   "name": "GitHub Copilot Harness",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Adds the GitHub Copilot CLI as a Work harness, driven over ACP (`copilot --acp --stdio`).",
   "icon": "copilot.svg",
   "harnesses": [
@@ -10,11 +10,36 @@
       "label": "Copilot",
       "acp": {
         "command": "copilot",
-        "args": ["--acp", "--stdio"]
+        "args": [
+          "--acp",
+          "--stdio"
+        ]
       },
-      "installHint": "Install the Copilot CLI (npm install -g @github/copilot), run `copilot login` once, then reopen Work.",
+      "installHint": "Install the Copilot CLI (npm install -g @github/copilot), run `copilot login` once, then reopen Work. Usage needs the GitHub CLI (`gh auth login`).",
       "installUrl": "https://docs.github.com/en/copilot/reference/acp-server",
-      "icon": "copilot.svg"
+      "icon": "copilot.svg",
+      "usage": {
+        "command": "gh",
+        "args": [
+          "api",
+          "/copilot_internal/user"
+        ],
+        "map": {
+          "plan": "/copilot_plan",
+          "meters": [
+            {
+              "label": "AI credits",
+              "remainingPercent": "/quota_snapshots/chat/percent_remaining",
+              "resetsAt": "/quota_reset_date_utc"
+            },
+            {
+              "label": "Completions",
+              "remainingPercent": "/quota_snapshots/completions/percent_remaining",
+              "resetsAt": "/quota_reset_date_utc"
+            }
+          ]
+        }
+      }
     }
   ]
 }
