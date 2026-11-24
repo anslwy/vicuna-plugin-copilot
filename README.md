@@ -25,3 +25,7 @@ OpenCode, Antigravity and other ACP harnesses.
 - This plugin ships no program; it only tells Vicuna how to start your own `copilot` CLI.
 
 See [docs.github.com/en/copilot/reference/acp-server](https://docs.github.com/en/copilot/reference/acp-server).
+
+## Icon
+
+`copilot.svg` uses the Copilot glyph from [Primer Octicons](https://github.com/primer/octicons) (MIT License, © GitHub Inc.). GitHub Copilot is a trademark of GitHub, Inc.

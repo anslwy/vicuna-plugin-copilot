@@ -1,7 +1,7 @@
 {
   "id": "copilot",
   "name": "GitHub Copilot Harness",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Adds the GitHub Copilot CLI as a Work harness, driven over ACP (`copilot --acp --stdio`).",
   "icon": "copilot.svg",
   "harnesses": [
